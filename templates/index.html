@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>tenderize.me</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- <script src="script.js"></script> -->
+    <style>
+    #left {
+        width: 50%;
+        float: left;
+    }
+    #right {
+        width: 50%;
+        float: right;
+    }
+    #row {
+        text-align: center;
+    }
+    #row img {
+        display:block;
+        margin:auto;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="row">
+        <h1>TENDERIZE.ME</h1>
+    </div>
+    <section id="row">
+        <div id="left">
+            <a href="/vote/{{context.left.id}}/{{context.right.id}}/" id="voteLeft">
+                <img src="{{context.left.img}}">
+            </a>
+            <p>Votes: {{context.left.votes}}</p>
+        </div>
+        <div id="right">
+            <a href="/vote/{{context.right.id}}/{{context.left.id}}/" id="voteRight">
+                <img src="{{context.right.img}}">
+            </a>
+            <p>Votes: {{context.right.votes}}</p>
+        </div>
+    </section>
+    <!-- <section id="row"> -->
+        <!-- <p> XX | YY </p> -->
+    <!-- </section> -->
+  </body>
+</html>
