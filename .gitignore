@@ -39,3 +39,6 @@ nosetests.xml
 # spider-y things
 images
 .DS_Store
+
+# settings files
+settings*.py
