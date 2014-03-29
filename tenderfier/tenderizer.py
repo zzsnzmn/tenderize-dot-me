@@ -15,20 +15,15 @@ for link in pics:
     img = urllib2.urlopen(link)
     img_file = img.read()
     m = hashlib.md5(img_file)
-    img_hash = m.hexdigest()
+    img_hash = m.hexdigest()[:5]
     filename = "{}.jpg".format(img_hash)
 
-    if not CONN.get(img_hash):
-        id = CONN.llen('tenders')
+    if not_tendered(img_hash):
         tender = {}
-
-        tender['img'] = file_name
+        tender['img'] = filename
         tender['source'] = link
-        tender['hash'] = img_hash
-        tender['id'] = id
+        tender['id'] = img_hash
 
-        CONN.set(id, tender)
-        CONN.set(img_hash, True)
-        CONN.rpush('tenders', img_hash)
+        add_tender(tender)
         with open("".join([settings.IMG_LOCATION, filename]), "wb") as f:
             f.write(img_file)

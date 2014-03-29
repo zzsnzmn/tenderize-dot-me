@@ -18,7 +18,7 @@
         text-align: center;
     }
     #row img {
- 	width: 100%;	
+        height: 400px;	
         display:block;
         margin:auto;
     }
@@ -30,16 +30,16 @@
     </div>
     <section id="row">
         <div id="left">
-            <a href="/vote/{{context.left.id}}/{{context.right.id}}/" id="voteLeft">
-                <img src="{{context.left.img}}">
+            <a href="/vote/{{left.id}}/{{right.id}}/" id="voteLeft">
+                <img src="/static/{{left.img}}">
             </a>
-            <p>Votes: {{context.left.votes}}</p>
+            <p>Votes: {{left.votes}}</p>
         </div>
         <div id="right">
-            <a href="/vote/{{context.right.id}}/{{context.left.id}}/" id="voteRight">
-                <img src="{{context.right.img}}">
+            <a href="/vote/{{right.id}}/{{left.id}}/" id="voteRight">
+                <img src="/static/{{right.img}}">
             </a>
-            <p>Votes: {{context.right.votes}}</p>
+            <p>Votes: {{right.votes}}</p>
         </div>
     </section>
     <!-- <section id="row"> -->
