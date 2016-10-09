@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/vote/<tender1>/<tender2>/")
 def vote_view(tender1, tender2):
-    """Vote right"""
+    """Vote chicken"""
     # Don't vote for the same thing.
     if tender1 == tender2:
         return redirect("/", code=302)
